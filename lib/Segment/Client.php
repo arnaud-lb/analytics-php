@@ -120,8 +120,8 @@ class Segment_Client {
    * Flush any async consumers
    */
   public function flush() {
-    if (!method_exists($this->consumer, 'flush')) return;
-    $this->consumer->flush();
+    if (!method_exists($this->consumer, 'flush')) return false;
+    return $this->consumer->flush();
   }
 
   /**
